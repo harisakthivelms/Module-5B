@@ -12,8 +12,32 @@ To write a **NumPy** program that deletes the second column from a given 2D arra
 
 ## 🧾 Program
 
-Add code here
+import numpy as np
+
+
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+
+print("Enter the elements of the original array row-wise:")
+array = []
+for _ in range(rows):
+    row = list(map(int, input().split()))
+    array.append(row)
+arr = np.array(array)
+
+print(f"Enter {rows} elements of the new column:")
+new_col = np.array(list(map(int, input().split()))).reshape(rows, 1)
+
+arr = np.delete(arr, 1, axis=1)
+
+arr = np.insert(arr, 1, new_col, axis=1)
+
+print("Updated array with replaced column:")
+print(arr)
+
 
 ## Output
+<img width="584" height="483" alt="image" src="https://github.com/user-attachments/assets/5119d035-78b3-4e6b-938c-cb656451d5b3" />
 
 ## Result
+thus code excuted sucessfully
